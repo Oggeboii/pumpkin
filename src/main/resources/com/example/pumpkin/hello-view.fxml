@@ -12,14 +12,11 @@
 
     <Label text="0 poäng"/>
     <HBox alignment="CENTER" spacing="20.0">
-        <ImageView onMouseClicked="#image1Clicked">
-            <Image url ="@images/pumpkin_blank.png"/>
+        <ImageView image="${controller.model.firstPumpkin}" onMouseClicked="#image1Clicked">
         </ImageView>
-        <ImageView onMouseClicked="#image2Clicked">
-            <Image url ="@images/pumpkin_blank.png"/>
+        <ImageView image="${controller.model.secondPumpkin}" onMouseClicked="#image2Clicked">
         </ImageView>
-        <ImageView onMouseClicked="#image3Clicked">
-            <Image url ="@images/pumpkin_blank.png"/>
+        <ImageView image="${controller.model.thirdPumpkin}" onMouseClicked="#image3Clicked">
         </ImageView>
     </HBox>
 
