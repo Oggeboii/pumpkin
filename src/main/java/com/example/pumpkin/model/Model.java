@@ -4,7 +4,11 @@ import com.example.pumpkin.Pumpkin;
 import javafx.beans.property.*;
 import javafx.scene.image.Image;
 
+import java.util.Random;
+
 public class Model {
+
+
 
     private int score = 0;
 
@@ -18,6 +22,9 @@ public class Model {
 
     ObjectProperty<Image> secondPumpkin;
     ObjectProperty<Image> thirdPumpkin;
+
+    Random rand = new Random();
+
     public Model() {
         noSmash = new Image(getClass().getResource("/com/example/pumpkin/images/pumpkin_blank.png").toExternalForm());
         smash = new Image(getClass().getResource("/com/example/pumpkin/images/pumpkin1.png").toExternalForm());
@@ -25,6 +32,22 @@ public class Model {
         firstPumpkin = new SimpleObjectProperty<>(noSmash);
         secondPumpkin = new SimpleObjectProperty<>(noSmash);
         thirdPumpkin = new SimpleObjectProperty<>(noSmash);
+
+
+
+
+    }
+
+    public String getScoring() {
+        return scoring.get();
+    }
+
+    public StringProperty scoringProperty() {
+        return scoring;
+    }
+
+    public void setScoring(String scoring) {
+        this.scoring.set(scoring);
     }
 
     public Image getFirstPumpkin() {
@@ -63,17 +86,16 @@ public class Model {
         this.thirdPumpkin.set(thirdPumpkin);
     }
 
-    public String getScoring() {
-        return scoring.get();
+    public void randomlyChangeOnePumpkin() {
+        int randomPumpkin = rand.nextInt(4);
+        if(randomPumpkin == 1)
+            setFirstPumpkin(smash);
+        else if (randomPumpkin == 2)
+            setFirstPumpkin(smash);
+        else
+            setFirstPumpkin(smash);
     }
 
-    public StringProperty scoringProperty() {
-        return scoring;
-    }
-
-    public void setScoring(String scoring) {
-        this.scoring.set(scoring);
-    }
 
     public void pumpkinSmashed(Pumpkin pumpkin) {
         //check if we can smack this pumpkin
