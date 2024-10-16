@@ -91,11 +91,10 @@ public class Model {
         if(randomPumpkin == 1)
             setFirstPumpkin(smash);
         else if (randomPumpkin == 2)
-            setFirstPumpkin(smash);
+            setSecondPumpkin(smash);
         else
-            setFirstPumpkin(smash);
+            setThirdPumpkin(smash);
     }
-
 
     public void pumpkinSmashed(Pumpkin pumpkin) {
         //check if we can smack this pumpkin
