@@ -25,9 +25,41 @@ public class Model {
         thirdPumpkin = new SimpleObjectProperty<>(noSmash);
     }
 
+    public Image getFirstPumpkin() {
+        return firstPumpkin.get();
+    }
 
+    public ObjectProperty<Image> firstPumpkinProperty() {
+        return firstPumpkin;
+    }
 
+    public void setFirstPumpkin(Image firstPumpkin) {
+        this.firstPumpkin.set(firstPumpkin);
+    }
 
+    public Image getSecondPumpkin() {
+        return secondPumpkin.get();
+    }
+
+    public ObjectProperty<Image> secondPumpkinProperty() {
+        return secondPumpkin;
+    }
+
+    public void setSecondPumpkin(Image secondPumpkin) {
+        this.secondPumpkin.set(secondPumpkin);
+    }
+
+    public Image getThirdPumpkin() {
+        return thirdPumpkin.get();
+    }
+
+    public ObjectProperty<Image> thirdPumpkinProperty() {
+        return thirdPumpkin;
+    }
+
+    public void setThirdPumpkin(Image thirdPumpkin) {
+        this.thirdPumpkin.set(thirdPumpkin);
+    }
 
     public void pumpkinSmashed(Pumpkin pumpkin) {
         //check if we can smack this pumpkin
